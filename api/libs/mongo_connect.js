@@ -9,9 +9,9 @@ let mongoose = require('mongoose')
 module.exports = function() {
     if (!single_connection) {
         single_connection = mongoose.connect(
-            'mongodb://ds137686.mlab.com:37686', options
+            'mongodb://ds137686.mlab.com:37686/xchat', options
         );
     }
 
     return single_connection;
-}
+};
