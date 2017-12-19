@@ -1,9 +1,8 @@
-const db = require('../libs/mongo_connect')()
+let db = require('../libs/mongo_connect')()
 , Schema = require('mongoose').Schema;
 
 // definicao do modelo de Livro que ja esta criado no MongoDB 
-const UserSchema = new Schema({
-    _id: Schema.Types.ObjectId,
+let UserSchema = new Schema({
     name: String,
     email: String,
     username: String,
