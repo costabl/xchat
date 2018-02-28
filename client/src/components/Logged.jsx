@@ -43,7 +43,7 @@ export default class Logged extends React.Component {
         
         var params = { 
             captionText:'This is my caption text',
-            headerText:'This is my header content',
+            headerText:'Connected Social Network Providers',
             showTermsLink:false,
             showEditLink:false,
             context:context,
@@ -69,18 +69,44 @@ export default class Logged extends React.Component {
     }
 
     onLogout(){
-        gigya.socialize.logout({callback:printResponse});
+        gigya.socialize.logout({callback:this.printResponse});
         this.props.history.push("/");
     }
 
     printResponse(response) {    
         if ( response.errorCode == 0 ) {               	 
-            alert('User has logged out');  
+            console.log('User has logged out');  
         }  
         else {  
-            alert('Error :' + response.errorMessage);  
+            console.log('Error :' + response.errorMessage);  
         }  
     } 
+
+    onShare(event) {
+        event.preventDefault();
+
+        // Constructing a UserAction Object
+        var act = new gigya.socialize.UserAction();
+
+        // Setting the Title
+        act.setTitle("This is my title");
+
+        // Adding a Link Back
+        act.setLinkBack("http://www.gigya.com/site/content/socialize.aspx");
+
+        // Setting the Description
+        act.setDescription("This is my Description");
+
+        // Adding a Media (image)
+        act.addMediaItem( {
+        type: 'image',      // Type of the media (image/flash/mp3)
+        src: 'http://graphics8.nytimes.com/images/2006/01/02/science/03cute.large2.jpg',   // URL to the image source
+        href: 'http://www.gigya.com/site/content/socialize.aspx'    // URL to redirect the user when he clicks the image
+        });
+
+        // Activate the Share add-on
+        gigya.socialize.showShareUI({  userAction:act });
+    }
 
     render(){
         return this.state.hasEmail ? (
@@ -95,6 +121,9 @@ export default class Logged extends React.Component {
                 <div>
                     <form onSubmit={this.onLogout.bind(this)}>
                         <input type="submit" value="Log out" />
+                    </form>
+                    <form onSubmit={this.onShare.bind(this)}>
+                        <input type="submit" value="Share" />
                     </form>
                 </div>
             </div>
