@@ -1,0 +1,164 @@
+@import url(https://fonts.googleapis.com/css?family=Comfortaa|Kaushan+Script);
+html {
+    background-color: whitesmoke;
+    overflow-y: visible;
+}
+.home {
+	width: 100wh;
+	height: 100vh;
+	color: #fff;
+	background: linear-gradient(-45deg,  rgba(231,60,126,0.5), #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+.comfortaa-family {
+    font-family: 'Comfortaa';
+}
+.fix-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 20vh;
+    background-color: inherit;
+    color: rgba(245, 245, 245, 0.5);
+}
+.navbar {
+    height: 15vh;
+    background-color: inherit;
+}
+#logo {
+    display: block;
+    min-width: 15vw;
+    min-height: 35vh;
+}
+#anim-typewriter{
+    color: rgba(255,127,80, 0.6); 
+    font-family: "Kaushan Script";
+    position: fixed;
+    top: 35%;
+    left: 16%;
+    font-size: 60px;
+    font-weight: bolder;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 40em;
+    animation: type 6s steps(100) normal both; 
+}
+#home-description{
+    font-family: "Comfortaa";
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    font-size: 17px;   
+}
+.text-footer{
+    color: rgba(0,0,0,0.5);
+}
+.enhance-footer{
+    color: rgba(231,60,126,0.5);
+}
+.card-equal-height {
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+}
+.card-equal-height .card-footer {
+    margin-top: auto;
+}
+figure[class='image']{
+    height: 20vh;
+}
+div[class='card card-equal-height'] {
+    border-radius: 5px;
+}
+div[class='card card-equal-height'] img{
+    background-size: contain;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+div[class='card card-equal-height'] div[class='content']{
+    font-size: 12px;
+    height: 100%;
+    text-align: justify;
+}
+div[class='card card-equal-height'] footer span{
+    font-size: 13px;
+}
+.card-header{
+    margin-bottom: 1px;
+}
+.card-header-title{
+    text-align:center; 
+    vertical-align: middle;
+    display: table-cell;
+    color: gray;
+}
+.profile-image{
+    border-radius: 5px !important;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+}
+/*
+#### div login
+*/
+#loginDiv{
+    position: relative;
+    width: 30vw;
+    height: 30vh;
+    left: 35%;
+}
+/*
+#### fim div login
+*/
+
+/*
+#### background animation
+*/
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes type{ 
+  from { width: 0; } 
+  to {width: 14.2em; }
+} 
+/*
+#### end background animation
+*/
