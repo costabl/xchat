@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 
 class Login extends Component {
@@ -5,28 +6,92 @@ class Login extends Component {
         super(props);
     }
 
+    componentDidMount(){
+        const login_params = {
+            version: 2,
+            showTermsLink: 'false',
+            height: 100,
+            width: 330,
+            containerID: 'loginDiv',
+            buttonsStyle: 'fullLogoColored',
+            autoDetectUserProviders: '',
+            redirectURL: "/logged", // equivalent to b.html
+            showTermsLink: false // remove 'Terms' link
+        }
+        gigya.socialize.showLoginUI(login_params);
+    }
+
     render() {
         return (
-            <div>
-                <nav className="navbar is-transparent">
-                    <div className="navbar-brand">
-                        <a className="navbar-item" href="http://localhost:8080">
-                        <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28"/>
-                        </a>
-                    </div>
-                </nav>
+            <div className="container has-text-centered">
+                <p className="comfortaa-family">Quickly login with your social network:</p>
+                <div id="loginDiv" />
+                <div className="columns is-centered comfortaa-family">
+                    
+                    <div className="column is-3">
+                        <div className="card card-equal-height">
+                            <div className="card-image">
+                                <figure className="image">
+                                    <img src="../public/images/simple.png" alt="Simple" />
+                                </figure>
+                            </div>
+                            <div className="card-content">
+                                <div className="media">
+                                    <div className="media-content">
+                                        <p className="title is-6 comfortaa-family ">Simple</p>
+                                    </div>
+                                </div>
 
-                <footer className="footer">
-                    <div className="container is-fluid">
-                        <div className="content has-text-centered">
-                        <p>
-                            <strong>XChat</strong> by <a href="https://www.linkedin.com/in/bruno-da-costa/">Bruno Costa</a>.<br></br>
-                            Extended version to support <a href="https://developers.gigya.com/">Gygia</a> Social Login integration.
-                        </p>
+                                <div className="content comfortaa-family is-size-6">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </footer>                
 
+                    <div className="column is-3">
+                        <div className="card card-equal-height">
+                            <div className="card-image">
+                                <figure className="image">
+                                    <img src="../public/images/secure.png" alt="Secure" />
+                                </figure>
+                            </div>
+                            <div className="card-content">
+                                <div className="media">
+                                    <div className="media-content">
+                                        <p className="title is-6 comfortaa-family ">Secure</p>
+                                    </div>
+                                </div>
+
+                                <div className="content comfortaa-family is-size-6">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="column is-3">
+                        <div className="card card-equal-height">
+                            <div className="card-image">
+                                <figure className="image">
+                                    <img src="../public/images/reliable.png" alt="Reliable" />
+                                </figure>
+                            </div>
+                            <div className="card-content">
+                                <div className="media">
+                                    <div className="media-content">
+                                        <p className="title is-6 comfortaa-family ">Reliable</p>
+                                    </div>
+                                </div>
+
+                                <div className="content comfortaa-family is-size-6">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         );
     }

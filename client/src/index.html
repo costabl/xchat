@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html class="has-navbar-fixed-top">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>:: Xchat + Gigya Challenge ::</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="../public/images/favicon.ico" />
     <meta name="description" content="Web Site for a Chat that uses Gigya for Login." />
     <meta name="keywords" content="react, node.js, xchat, code, learning, gigya" />
     <meta name="author" content="Bruno Costa <bruno.l.costa@gmail.com>" />
@@ -19,30 +19,7 @@
 
   </head>
   <body>
-    <div id="root" class="container is-fluid">
+    <div id="root">
     </div>
-
-    <script type="text/javascript">
-        let login_params=
-        {
-        version: 2
-        ,showTermsLink: 'false'
-        ,height: 100
-        ,width: 330
-        ,containerID: 'loginDiv'
-        ,buttonsStyle: 'fullLogoColored'
-        ,autoDetectUserProviders: '',
-        redirectURL: "/logged",
-        showTermsLink:false // remove 'Terms' link
-        }
-        </script>
-        <div id="loginDiv"></div>
-        <script type="text/javascript">
-        if (window.location == 'http://localhost:8080/'){
-        console.log('rendering..')
-        gigya.socialize.showLoginUI(login_params);
-        } 
-        </script>
-
   </body>
 </html>
