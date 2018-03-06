@@ -1,5 +1,7 @@
 
 import React from 'react';
+const ReactDOM = require('react-dom');
+const client = require('../api/client');
 
 export default class Logged extends React.Component {
     constructor(props){
@@ -44,7 +46,11 @@ export default class Logged extends React.Component {
         params['onClose'] = myOnClose;
         
         gigya.socialize.showAddConnectionsUI(params);
-        this.handleShowHide = this.handleShowHide.bind(this)
+        this.handleShowHide = this.handleShowHide.bind(this);
+
+        client({method: 'GET', path: 'http://localhost:3000/user'}).done(response => {
+			console.log(response);
+		});
     }
 
     onSubmit(){
