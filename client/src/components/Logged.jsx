@@ -1,7 +1,5 @@
 
 import React from 'react';
-const ReactDOM = require('react-dom');
-const client = require('../api/client');
 
 export default class Logged extends React.Component {
     constructor(props){
@@ -28,7 +26,27 @@ export default class Logged extends React.Component {
 
         };
         let user = gigya.socialize.getUserInfo({callback: parse});
-        
+
+        // Make a request for a user with a given ID
+        axios.get('http://localhost:3000/api/session')
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+        axios.post('http://localhost:3000/api/session/create', { 
+            "username" : "bruno-hardcoded-axios", 
+            "provider": "googleplus"
+        })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
         // show networks providers connecteds
         let params = { 
             showTermsLink:false,
@@ -47,10 +65,6 @@ export default class Logged extends React.Component {
         
         gigya.socialize.showAddConnectionsUI(params);
         this.handleShowHide = this.handleShowHide.bind(this);
-
-        client({method: 'GET', path: 'http://localhost:3000/user'}).done(response => {
-			console.log(response);
-		});
     }
 
     onSubmit(){
